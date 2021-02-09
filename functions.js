@@ -14,9 +14,10 @@ const channels = require("./channels.json");
  ****************************************************************/
 function getChannelName(channel) {
   // Your code here
+  return channels.name;
 }
 
-// console.log(getChannelName(channels[0]));
+//console.log(getChannelName(channels[0]));
 
 /**************************************************************
  * numberOfVideos(channel)
@@ -25,8 +26,9 @@ function getChannelName(channel) {
  ****************************************************************/
 function numberOfVideos(channel) {
   // Your code here
+  return channel.videos.lenght();
 }
-// console.log(numberOfVideos(channels[0]))
+//console.log(numberOfVideos(channels[0]))
 
 /**************************************************************
  * channelHasVideo(videoTitle, channel):
@@ -39,9 +41,16 @@ function numberOfVideos(channel) {
  ****************************************************************/
 function channelHasVideo(videoTitle, channel) {
   // Your code here
+  let channelr = false;
+  channel.videos.forEach((video) => {
+    if (videoTitle === videos.title) {
+      channelr = True;
+    }
+  });
+  return channelr;
 }
-// console.log(channelHasVideo("The Universal S", channels[0]));
-// console.log(channelHasVideo("The Universal S", channels[1]));
+//console.log(channelHasVideo("The Universal S", channels[0]));
+//console.log(channelHasVideo("The Universal S", channels[1]));
 
 /**************************************************************
  * getChannelByName(channelName, channels):
@@ -53,6 +62,13 @@ function channelHasVideo(videoTitle, channel) {
  ****************************************************************/
 function getChannelByName(channelName, channels) {
   // Your code here
+  let find = null;
+  channels.forEach((chan) => {
+    if (channelName === channels.name) {
+      find = chan;
+    }
+  });
+  return find;
 }
 // console.log(getChannelByName("PowerfulJRE", channels))
 
@@ -66,6 +82,13 @@ function getChannelByName(channelName, channels) {
  ****************************************************************/
 function getChannelByVideoTitle(videoTitle, channels) {
   // Your code here
+  let find = null;
+  channels.forEach((chan) => {
+    if (channelHasVideo(videosTitle, channels)) {
+      find = chan;
+    }
+  });
+  return find;
 }
 // console.log(getChannelByVideoTitle("The Universal S", channels));
 
@@ -79,6 +102,13 @@ function getChannelByVideoTitle(videoTitle, channels) {
  ****************************************************************/
 function searchChannels(query, channels) {
   // Your code here
+  const chanllF = [];
+  channels.forEach((cha) => {
+    if (channel.name.includes(query) || channel.description.includes(query)) {
+      chanllF.push(cha);
+    }
+  });
+  return chanllF;
 }
 // console.log(searchChannels("the", channels))
 
